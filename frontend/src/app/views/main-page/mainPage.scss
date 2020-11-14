@@ -1,0 +1,18 @@
+.swipe-btns button {
+  border: none;
+  outline: none;
+  width: 60px;
+  height: 60px;
+  font-size: 2rem;
+  border-radius: 50%;
+}
+.swipe-btns button:hover {
+  cursor: pointer;
+  background-color: lightgray;
+}
+.swipe-btns {
+  display: flex;
+  grid-gap: 10px;
+  justify-content: center;
+  margin-top: 20px;
+}
