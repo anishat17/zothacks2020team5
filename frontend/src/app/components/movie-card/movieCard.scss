@@ -1,0 +1,55 @@
+@import "globals/hack-variables.scss";
+
+.movie-card {
+  background-color: white;
+  margin: auto;
+  max-width: 30vw;
+  max-height: 75vh;
+  height: fit-content;
+  display: grid;
+  position: relative;
+}
+.movie-card:hover {
+  cursor: pointer;
+}
+.movie-card img {
+  width: 100%;
+  border-radius: 10px;
+}
+.movie-info {
+  position: absolute;
+  // background-color: red;
+  width: 100%;
+  height: 100%;
+  bottom: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  background-image: linear-gradient(
+    to bottom,
+    rgba(255, 0, 0, 0),
+    rgba(0, 0, 0, 0.75)
+  );
+  color: white;
+  grid-gap: 5px;
+  text-align: left;
+}
+.movie-info h1,
+p,
+section {
+  margin: 5px;
+  padding: 0 15px 0;
+}
+.movie-info section {
+  display: flex;
+  grid-gap: 5px;
+  // margin-bottom: 10px;
+}
+.movie-genre {
+  background-color: rgba(255, 255, 255, 0.25);
+  border-radius: 20px;
+  padding: 5px;
+  display: inline-block;
+  color: white;
+  margin: 0;
+}
