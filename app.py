@@ -3,7 +3,6 @@ import os
 from flask import Flask, json
 from flask_cors import CORS
 from flask_restful import Api
-from resources.user import User
 from dotenv import load_dotenv
 
 # Load Environment variables
@@ -12,16 +11,6 @@ load_dotenv()
 app = Flask(__name__)
 # Allow cross domain apps to access API
 CORS(app)
-
-# Provide Mongo Atlas URI, stored in config file
-app.config["MONGO_URI"] = os.getenv("MONGO_URI_MASTER")
-# Set custom JSON Encoder for Mongo Object
-app.json_encoder = util.MongoEncoder
-db.mongo.init_app(app)
-api = Api(app)
-
-api.add_resource(User, "/user")
-
 
 # Vanilla Flask route
 @app.route("/", methods=["GET"])

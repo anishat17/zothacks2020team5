@@ -24,7 +24,12 @@ def get_pop_titles(json_result: dict):
     pop_titles = json_result['results']
     selected = pop_titles[0]
     first_choice = selected['title']
-    movie_id = selected['id']
-    movie_poster = selected['poster_path']
-    movie_lang = selected['original_language']
-
+    m_id = selected['id']
+    poster = selected['poster_path']
+    lang = selected['original_language']
+    return {'first': first_choice, 'movie_num': m_id, 'movie_poster': poster, 'movie_lang': lang}
+ 
+def run_api(search_query: str):
+     url_link = build_search(search_query)
+     results = get_results(url_link)
+     return results
