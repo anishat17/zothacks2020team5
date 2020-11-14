@@ -1,23 +1,26 @@
-import logo from './logo.svg';
-import './App.css';
+// React and CSS Imports
+import React from "react";
+import "./App.scss";
+import "globals/hack-styles.scss";
+import '../node_modules/react-vis/dist/style.css';
+
+// Installed dependency imports
+import { Route, Switch, BrowserRouter as Router } from "react-router-dom";
+
+// Website imports for classes you made
+import { UserList } from "app/views";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="app fill-view">
+      <Router>
+        <Switch>
+          <Route 
+            exact path={"/"}
+            component={UserList}
+          />
+        </Switch>
+      </Router>
     </div>
   );
 }
