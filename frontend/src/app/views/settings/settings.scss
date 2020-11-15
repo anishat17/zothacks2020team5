@@ -1,0 +1,12 @@
+.genre-list {
+  display: grid;
+  // grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+  grid-auto-flow: column;
+  grid-gap: 25px;
+  text-align: left;
+  font-size: 1.5rem;
+}
+.genre-list input[type="checkbox"] {
+  transform: scale(1.5);
+  margin-right: 10px;
+}

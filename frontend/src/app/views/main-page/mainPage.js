@@ -3,11 +3,11 @@ import { MovieCard, Navbar } from "app/components";
 import "./mainPage.scss"
 
 function MainPage() {
-
+  const genre = sessionStorage.genre;
   return (
     <div>
       <Navbar />
-      <MovieCard genre={"comedy"}/>
+      <MovieCard genre={genre}/>
     </div>
   )
 }

@@ -12,24 +12,30 @@ function MovieCard({genre}) {
   const [genres, setGenres] = useState([]);
 
   useEffect(() => {
-    axios.get(`https://zothacks2020team5.herokuapp.com/api/${genre}`).then(res => {
-      const temp = res.data.results;
-      setMovies(temp);
-      setIndex(temp.length-1)
-    })
+    if (genre === "") {
+      axios.get(`https://api.themoviedb.org/3/movie/popular?api_key=4437f2ad74b0b2eb3a77c256d4851496&language=en-US&page=1`).then(res => {
+        const temp = res.data.results;
+        setMovies(temp);
+        setIndex(temp.length - 1)
+      })
+    } else {
+      axios.get(`https://zothacks2020team5.herokuapp.com/api/${genre}`).then(res => {
+        const temp = res.data.results;
+        setMovies(temp);
+        setIndex(temp.length - 1)
+      })
+    }
     axios.get("https://api.themoviedb.org/3/genre/movie/list?api_key=4437f2ad74b0b2eb3a77c256d4851496&language=en-US").then(res => {
       const g = res.data.genres;
       setGenres(g);
     })
   }, [])
 
-  const childRefs = useMemo(() => Array(20).fill(0).map(i => React.createRef()), [])
+  const childRefs = useMemo(() => Array(100).fill(0).map(i => React.createRef()), [])
 
   const swipe = (dir) => {
-    if (dir == "right") {
-      // const title = document.getElementsByClassName("movie-info")[movies.length - 1].getElementsByTagName("h1")[0].innerText;
+    if (dir === "right") {
       const movie = movies[index];
-      console.log(movie);
       let a;
       if (sessionStorage.getItem('liked') === null) {
         a = [];
@@ -47,23 +53,26 @@ function MovieCard({genre}) {
   return (
     <div className="movie-cards">
       {movies.map((movie, index) => (
-        <TinderCard ref={childRefs[index]} className="swipe" key={movie.title} >
+        <TinderCard ref={childRefs[index]} className="swipe" key={index} preventSwipe={["up", "down"]}>
           <div className="movie-info" style={{
             backgroundImage: `url(https://image.tmdb.org/t/p/w500${movie.poster_path})`, width: "30vw",
-            height: "75vh", minWidth: "300px"
+            height: "75vh", minWidth: "300px", backgroundColor: "black"
           }}>
-            <h1>{movie.title}</h1>
-            <p>{movie.overview.substr(0, 140) + "..."}</p>
-            <section>
-              {movie.genre_ids.slice(0, 3).map((id) => {
-                const genreObj = genres.find(genre => genre.id == id);
-                if (genreObj != undefined) {
-                  return (
-                    <p key={id} className="movie-genre">{genreObj.name}</p>
-                  )
-                }
-              })}
-            </section>
+            <div className="overlay">
+              <h1>{movie.title}</h1>
+              <p>{movie.overview.substr(0, 140) + "..."}</p>
+              <section>
+                {movie.genre_ids.slice(0, 3).map((id) => {
+                  const genreObj = genres.find(genre => genre.id === id);
+                  if (genreObj !== undefined) {
+                    return (
+                      <p key={id} className="movie-genre">{genreObj.name}</p>
+                    )
+                  }
+                })}
+              </section>
+            </div>
+            
           </div>
         </TinderCard>
         
