@@ -8,7 +8,7 @@ import '../node_modules/react-vis/dist/style.css';
 import { Route, Switch, BrowserRouter as Router } from "react-router-dom";
 
 // Website imports for classes you made
-import { MainPage, Watchlist } from "app/views";
+import { MainPage, Watchlist, Settings } from "app/views";
 
 function App() {
   return (
@@ -17,6 +17,10 @@ function App() {
         <Switch>
           <Route 
             exact path={"/"}
+            component={Settings}
+          />
+          <Route
+            exact path={"/explore"}
             component={MainPage}
           />
           <Route

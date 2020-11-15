@@ -1,0 +1,16 @@
+nav ul {
+  list-style-type: none;
+  display: flex;
+  justify-content: center;
+  grid-gap: 20px;
+  padding: 0;
+}
+nav ul li a {
+  text-decoration: none;
+}
+nav ul li a:hover {
+  font-weight: bold;
+}
+.active {
+  font-weight: bold;
+}
