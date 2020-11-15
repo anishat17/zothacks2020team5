@@ -5,6 +5,15 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+<<<<<<< HEAD
+  background-image: linear-gradient(to right, $left-gradient, $right-gradient);
+  overflow-y: auto;
+}
+
+
+
+=======
   background-image: linear-gradient(to top, $left-gradient, $right-gradient);
   overflow-y: auto;
 }
+>>>>>>> 6dcecc00462586eeee427475d51161ce29cba33e
