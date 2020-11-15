@@ -2,11 +2,14 @@
 .movie-cards {
   display: flex;
   justify-content: center;
+  width: 30vw;
+  height: 75vh;
+  min-width: 300px;
 }
 .swipe {
   position: absolute;
 }
-.movie-card:hover {
+.movie-info:hover {
   cursor: pointer;
 }
 .movie-card img {
@@ -54,4 +57,11 @@ section {
   grid-gap: 5px;
   text-align: left;
   border-radius: 15px;
+}
+.no-more {
+  width: 100%;
+  height: 100%;
+  display: grid;
+  justify-content: center;
+  align-items: center;
 }

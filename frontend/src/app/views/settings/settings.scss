@@ -1,3 +1,4 @@
+@import "globals/hack-variables.scss";
 .genre-list {
   display: grid;
   // grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
@@ -9,4 +10,20 @@
 .genre-list input[type="checkbox"] {
   transform: scale(1.5);
   margin-right: 10px;
+}
+.footer {
+  // background-color: red;
+  width: 100vw;
+  bottom: 0;
+  left: 0;
+  position: fixed;
+  padding: 5px;
+  text-align: left;
+  color: white;
+}
+.footer p {
+  display: inline-block;
+}
+a {
+  text-decoration: none;
 }

@@ -17,6 +17,7 @@ function Settings() {
 
   const onChange = (event) => {
     sessionStorage.genre = event.target.value;
+    sessionStorage.setItem("data", JSON.stringify([]))
   }
   return (
     <div>
@@ -33,7 +34,10 @@ function Settings() {
         <NavLink activeClassName="active" to="/explore" exact={true}>
           Continue
         </NavLink>
-      </button> 
+      </button>
+      <div className="footer">
+        <p>Made by Anisha Tripathi, Brian Tu, and Xuan Vu | ZotHacks &copy;2020 Team 5</p>
+      </div> 
     </div>
   )
 }

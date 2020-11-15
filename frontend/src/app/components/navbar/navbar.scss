@@ -1,3 +1,4 @@
+@import "globals/hack-variables.scss";
 nav ul {
   list-style-type: none;
   display: flex;
@@ -7,6 +8,7 @@ nav ul {
 }
 nav ul li a {
   text-decoration: none;
+  color: $ember-blue;
 }
 nav ul li a:hover {
   font-weight: bold;

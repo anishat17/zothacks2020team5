@@ -5,6 +5,12 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  background-image: linear-gradient(to top, $left-gradient, $right-gradient);
+  background-image: linear-gradient(
+    to bottom,
+    $right-gradient,
+    $ember-orange,
+    $ember-red,
+    $ember-maroon
+  );
   overflow-y: auto;
 }

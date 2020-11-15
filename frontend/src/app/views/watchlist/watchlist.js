@@ -15,16 +15,14 @@ function Watchlist() {
   return (
     <div>
       <Navbar />
-      <div class="liked-movies">
+      {liked.length === 0 ? (<p>No matches yet. Try exploring some movies and seeing what you like.</p>) : (<div className="liked-movies">
         {liked.map(movie => {
-          console.log(movie.poster_path)
           return (
-            <div style={{ backgroundImage: `url(https://image.tmdb.org/t/p/w500${movie.poster_path})`, width: "200px", height: "300px", backgroundSize: "cover" }}>
+            <div style={{ backgroundImage: `url(https://image.tmdb.org/t/p/w500${movie.poster_path})`, width: "200px", height: "300px", backgroundSize: "cover", backgroundColor: "black" }}>
             </div>
           )
         })}
-      </div>
-      
+      </div>)}
     </div>
   )
 }

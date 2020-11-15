@@ -1,1 +1,0 @@
-export { default as Card } from "../containers/card/Card";

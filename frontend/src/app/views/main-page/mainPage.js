@@ -7,7 +7,7 @@ function MainPage() {
   return (
     <div>
       <Navbar />
-      <MovieCard genre={genre}/>
+      <MovieCard genre={genre} />
     </div>
   )
 }
